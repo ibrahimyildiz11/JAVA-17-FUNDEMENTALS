@@ -1,4 +1,4 @@
-package be.vdab.operatoren;
+package be.vdab.hoofdstuk4.operatoren;
 
 public class BTWnummer {
     public static void main(String[] args) {

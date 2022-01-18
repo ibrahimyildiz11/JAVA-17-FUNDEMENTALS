@@ -1,4 +1,4 @@
-package be.vdab.hello;
+package be.vdab.hoofdstuk4.hello;
 
 public class HelloWorld {
     public static void main(String[] args) {
