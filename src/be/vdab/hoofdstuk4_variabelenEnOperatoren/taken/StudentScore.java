@@ -1,4 +1,4 @@
-package be.vdab.hoofdstuk4.taken;
+package be.vdab.hoofdstuk4_variabelenEnOperatoren.taken;
 
 public class StudentScore {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package be.vdab.hoofdstuk4.taken;
-
-import java.util.Scanner;
+package be.vdab.hoofdstuk4_variabelenEnOperatoren.taken;
 
 public class Snoepautomaat {
     public static void main(String[] args) {

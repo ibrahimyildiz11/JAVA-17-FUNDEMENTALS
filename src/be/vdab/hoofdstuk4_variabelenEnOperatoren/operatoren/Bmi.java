@@ -1,4 +1,4 @@
-package be.vdab.hoofdstuk4.operatoren;
+package be.vdab.hoofdstuk4_variabelenEnOperatoren.operatoren;
 
 public class Bmi {
     public static void main(String[] args) {

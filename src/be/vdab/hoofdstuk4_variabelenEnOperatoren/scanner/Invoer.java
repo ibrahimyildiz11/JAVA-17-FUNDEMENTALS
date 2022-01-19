@@ -1,4 +1,4 @@
-package be.vdab.hoofdstuk4.scanner;
+package be.vdab.hoofdstuk4_variabelenEnOperatoren.scanner;
 
 import java.util.Scanner;
 

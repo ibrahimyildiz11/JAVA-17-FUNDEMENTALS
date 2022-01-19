@@ -1,4 +1,4 @@
-package be.vdab.hoofdstuk4.hello;
+package be.vdab.hoofdstuk4_variabelenEnOperatoren.hello;
 
 public class HelloWorld {
     public static void main(String[] args) {
