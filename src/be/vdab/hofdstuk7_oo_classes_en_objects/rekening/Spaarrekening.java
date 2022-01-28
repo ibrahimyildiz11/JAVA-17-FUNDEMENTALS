@@ -3,11 +3,11 @@ package be.vdab.hofdstuk7_oo_classes_en_objects.rekening;
 public class Spaarrekening {
     private String rekeningNummer;
     private double saldo;
-    private double interest;
+    private static double interest;
 
     public Spaarrekening(String rekeningNummer, double interest) {
         this.rekeningNummer = rekeningNummer;
-        this.interest = interest;
+        Spaarrekening.interest = interest;
     }
 
     public Spaarrekening(String rekeningNummer, double saldo, double interest) {
@@ -31,7 +31,7 @@ public class Spaarrekening {
         this.saldo = saldo;
     }
 
-    public double getInterest() {
+    public static double getInterest() {
         return interest;
     }
 
@@ -40,15 +40,25 @@ public class Spaarrekening {
     }
 
     public void storten (double bedrag) {
-        saldo += bedrag;
+        if (checkBedrag(bedrag)) {
+            saldo += bedrag;
+        }
     }
 
     public void afhalen(double bedrag) {
-        saldo -= bedrag;
+        if (checkBedrag(bedrag) && checkBedrag(saldo)) {
+            saldo -= bedrag;
+        }
     }
 
     public void overschrijven(Spaarrekening spaarRek, double bedrag) {
-        saldo -= bedrag;
-        spaarRek.storten(bedrag);
+        if (checkBedrag(bedrag) && checkBedrag(saldo)) {
+            saldo -= bedrag;
+            spaarRek.storten(bedrag);
+        }
+    }
+
+    private boolean checkBedrag(double bedrag) {
+        return bedrag > 0.0;
     }
 }
