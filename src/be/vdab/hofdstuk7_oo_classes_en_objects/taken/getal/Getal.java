@@ -1,4 +1,4 @@
-package be.vdab.hofdstuk7_oo_classes_en_objects.taken;
+package be.vdab.hofdstuk7_oo_classes_en_objects.taken.getal;
 
 public class Getal {
     private int x;
