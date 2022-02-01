@@ -2,6 +2,7 @@ package be.vdab.hofdstuk9_inheritance;
 
 public class Zichtrekening extends Rekening{
     private int maxKrediet;
+    private static final double INTREST_ZICHTREKENING = 0.25;
 
     public Zichtrekening(String rekeningNummer, int bedrag) {
         this(rekeningNummer, 0.0, bedrag);
@@ -9,15 +10,17 @@ public class Zichtrekening extends Rekening{
 
     public Zichtrekening(String rekeningMunner, double saldo, int bedrag) {
         super(rekeningMunner, saldo);
-        maxKrediet = bedrag;
+        setMaxKrediet(bedrag);
     }
 
     public int getMaxKrediet() {
         return maxKrediet;
     }
 
-    public void setMaxKrediet(int maxKrediet) {
-        this.maxKrediet = maxKrediet;
+    public final void setMaxKrediet(int maxKrediet) {
+        if (maxKrediet > 0) {
+            this.maxKrediet = maxKrediet;
+        }
     }
 
     @Override
@@ -27,6 +30,20 @@ public class Zichtrekening extends Rekening{
             if (testSaldo >= 0) {
                 super.afhalen(bedrag);
             }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", " +  maxKrediet;
+    }
+
+    @Override
+    public double berekenIntrest() {
+        if (getSaldo()>0) {
+            return getSaldo() * INTREST_ZICHTREKENING/100;
+        }else {
+            return 0.0;
         }
     }
 }
